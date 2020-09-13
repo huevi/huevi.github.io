@@ -20,7 +20,7 @@
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://heuvi.github.io/web_scraping/" /><link rel="next" href="http://heuvi.github.io/testing/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://heuvi.github.io/web_scraping/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -120,8 +120,14 @@
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="basic-idea">Basic idea</h1>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-idea">Basic idea</a></li>
+    <li><a href="#limitation">Limitation</a></li>
+    <li><a href="#example-repositories">Example repositories</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="basic-idea">Basic idea</h2>
 <p>To use github repositary as a storage for webscraping using Github actions(software workflow automation CI/CD tool).</p>
 <ol>
 <li>Github actions gets triggered when a push happens to the repo or based on a corn job schedule.</li>
@@ -188,18 +194,19 @@
 </span></code></pre></td></tr></table>
 </div>
 </div><p>if the script uses sensitive api keys then it can be declared using <a href="https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets" target="_blank" rel="noopener noreffer">github secrets</a></p>
-<h1 id="limitation">Limitation</h1>
+<h2 id="limitation">Limitation</h2>
 <ul>
 <li>To handle large files github provides <a href="https://git-lfs.github.com/" target="_blank" rel="noopener noreffer">git-lfs</a></li>
 <li>Github actions <a href="https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits" target="_blank" rel="noopener noreffer">usage limits</a></li>
 </ul>
-<h1 id="example-repositories">Example repositories</h1>
+<h2 id="example-repositories">Example repositories</h2>
 <ul>
 <li><a href="https://github.com/huevi/daily-twitter-trends-data">https://github.com/huevi/daily-twitter-trends-data</a></li>
 <li><a href="https://github.com/huevi/daily_youtube_trends">https://github.com/huevi/daily_youtube_trends</a></li>
 </ul>
 <p>Happy data scraping/archiving!!</p>
-<p><strong>This work is inspired from user <a href="https://github.com/sw-yx" target="_blank" rel="noopener noreffer">sw-yx</a> <a href="https://github.com/sw-yx/gh-action-data-scraping" target="_blank" rel="noopener noreffer">repo</a></strong></p></div><div class="post-footer" id="post-footer">
+<p><strong>This work is inspired from user <a href="https://github.com/sw-yx" target="_blank" rel="noopener noreffer">sw-yx</a> <a href="https://github.com/sw-yx/gh-action-data-scraping" target="_blank" rel="noopener noreffer">repo</a></strong></p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -224,8 +231,7 @@
         </section>
     </div>
 
-    <div class="post-nav">
-            <a href="/testing/" class="next" rel="next" title="testing">testing<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"></div>
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.

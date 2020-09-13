@@ -1,9 +1,9 @@
 # Web Scraping without DB using Github Actions
 
 
-<!--more-->
 
-# Basic idea
+
+## Basic idea
 
 To use github repositary as a storage for webscraping using Github actions(software workflow automation CI/CD tool).
 
@@ -45,13 +45,13 @@ jobs:
 
 if the script uses sensitive api keys then it can be declared using [github secrets](https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets)
 
-# Limitation 
+## Limitation 
 
 * To handle large files github provides [git-lfs](https://git-lfs.github.com/)
 * Github actions [usage limits](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits)
 
 
-# Example repositories
+## Example repositories
 
 * https://github.com/huevi/daily-twitter-trends-data
 * https://github.com/huevi/daily_youtube_trends 
