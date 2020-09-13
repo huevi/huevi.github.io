@@ -8,7 +8,7 @@ To use github repositary as a storage for webscraping using Github actions(softw
 1. Github actions gets triggered when a push happens to the repo or based on a corn job schedule. 
 2. It checks out the repo
 3. Runs the scripts 
-4. push it back to the github using https://github.com/mikeal/publish-to-github-action
+4. Pushes the entire repo with data back to the github using [publish action](https://github.com/mikeal/publish-to-github-action)
 
 
 ```yaml
