@@ -15,6 +15,8 @@ categories: ["python"]
 lightgallery: true
 ---
 
+<!--more-->
+
 # Basic idea
 
 To use github repositary as a storage for webscraping using Github actions(software workflow automation CI/CD tool).
@@ -70,4 +72,4 @@ if the script uses sensitive api keys then it can be declared using [github secr
 
 Happy data scraping/archiving!!
 
-**This work is inspired from user [sw-yx](https://github.com/sw-yx)'s [repo](https://github.com/sw-yx/gh-action-data-scraping)**
+**This work is inspired from user [sw-yx](https://github.com/sw-yx) [repo](https://github.com/sw-yx/gh-action-data-scraping)**
