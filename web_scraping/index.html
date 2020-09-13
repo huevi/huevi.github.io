@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/heuvi.github.io\/web_scraping\/"
-        },"genre": "posts","keywords": "web-scraping, python","wordcount":  4 ,
+        },"genre": "posts","keywords": "web-scraping, python","wordcount":  144 ,
         "url": "http:\/\/heuvi.github.io\/web_scraping\/","datePublished": "2020-08-31T21:05:54+05:30","dateModified": "2020-08-31T21:05:54+05:30","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,7 +106,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Web Scraping without DB using Github Actions</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://huevi.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Hari</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-31">2020-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-31">2020-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;144 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -121,7 +121,85 @@
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"><h1 id="list-of-steps-involed">list of steps involed</h1>
+            </div><div class="content" id="content"><h1 id="basic-idea">Basic idea</h1>
+<p>To use github repositary as a storage for webscraping using Github actions(software workflow automation CI/CD tool).</p>
+<ol>
+<li>Github actions gets triggered when a push happens to the repo or based on a corn job schedule.</li>
+<li>It checks out the repo</li>
+<li>Runs the scripts</li>
+<li>push it back to the github using <a href="https://github.com/mikeal/publish-to-github-action">https://github.com/mikeal/publish-to-github-action</a></li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">name</span><span class="p">:</span><span class="w"> </span>Scrape<span class="w"> </span>Twitter<span class="w"> </span>Trends<span class="w"> </span>Data<span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">on</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">push</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">workflow_dispatch</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">schedule</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">cron</span><span class="p">:</span><span class="w">  </span><span class="s1">&#39;0 */8 * * *&#39;</span><span class="w"> </span><span class="c"># Every hour. Ref https://crontab.guru/examples.html</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">jobs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="k">build</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="k">name</span><span class="p">:</span><span class="w"> </span>Build<span class="w">
+</span><span class="w">    </span><span class="k">runs-on</span><span class="p">:</span><span class="w"> </span>ubuntu-latest<span class="w">
+</span><span class="w">    </span><span class="k">steps</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">uses</span><span class="p">:</span><span class="w"> </span>actions/checkout@v2<span class="w">
+</span><span class="w">    </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>get<span class="w"> </span>twitter<span class="w"> </span>data<span class="w">
+</span><span class="w">      </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">ACCESS_TOKEN_SECRET</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.ACCESS_TOKEN_SECRET<span class="w"> </span>}}<span class="w">
+</span><span class="w">        </span><span class="k">ACCESS_TOKEN</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.ACCESS_TOKEN<span class="w"> </span>}}<span class="w">
+</span><span class="w">        </span><span class="k">CONSUMER_KEY</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.CONSUMER_KEY<span class="w"> </span>}}<span class="w">
+</span><span class="w">        </span><span class="k">CONSUMER_SECRET</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.CONSUMER_SECRET<span class="w"> </span>}}<span class="w">
+</span><span class="w">      </span><span class="k">run</span><span class="p">:</span><span class="w"> </span><span class="sd">|
+</span><span class="sd">        pip3 install install pandas tweepy pytz</span><span class="w">
+</span><span class="w">        </span>python3<span class="w"> </span>twitter_trends.py<span class="w">
+</span><span class="w">    </span>- <span class="k">uses</span><span class="p">:</span><span class="w"> </span>mikeal/publish-to-github-action@master<span class="w">
+</span><span class="w">      </span><span class="k">env</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="k">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span>${{<span class="w"> </span>secrets.GITHUB_TOKEN<span class="w"> </span>}}<span class="w"> </span><span class="c"># GitHub sets this for you</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>if the script uses sensitive api keys then it can be declared using <a href="https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets" target="_blank" rel="noopener noreffer">github secrets</a></p>
+<h1 id="limitation">Limitation</h1>
+<ul>
+<li>To handle large files github provides <a href="https://git-lfs.github.com/" target="_blank" rel="noopener noreffer">git-lfs</a></li>
+<li>Github actions <a href="https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits" target="_blank" rel="noopener noreffer">usage limits</a></li>
+</ul>
+<h1 id="example-repositories">Example repositories</h1>
+<ul>
+<li><a href="https://github.com/huevi/daily-twitter-trends-data">https://github.com/huevi/daily-twitter-trends-data</a></li>
+<li><a href="https://github.com/huevi/daily_youtube_trends">https://github.com/huevi/daily_youtube_trends</a></li>
+</ul>
+<p>Happy data scraping/archiving!!</p>
+<p><strong>This work is inspired from user <a href="https://github.com/sw-yx" target="_blank" rel="noopener noreffer">sw-yx</a>&rsquo;s <a href="https://github.com/sw-yx/gh-action-data-scraping" target="_blank" rel="noopener noreffer">repo</a></strong></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
