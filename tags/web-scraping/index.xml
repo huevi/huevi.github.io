@@ -4,6 +4,15 @@
         <link>http://heuvi.github.io/tags/web-scraping/</link>
         <description>web-scraping - Tag - Hari&#39;s blog</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 31 Aug 2020 21:05:54 &#43;0530</lastBuildDate><atom:link href="http://heuvi.github.io/tags/web-scraping/" rel="self" type="application/rss+xml" /><item>
+    <title>testing</title>
+    <link>http://heuvi.github.io/testing/</link>
+    <pubDate>Mon, 31 Aug 2020 21:05:54 &#43;0530</pubDate>
+    <author>Author</author>
+    <guid>http://heuvi.github.io/testing/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/featured-image.png" referrerpolicy="no-referrer">
+            </div>This article shows Web Scraping without DB using Github Actions in python]]></description>
+</item><item>
     <title>Web Scraping without DB using Github Actions</title>
     <link>http://heuvi.github.io/web_scraping/</link>
     <pubDate>Mon, 31 Aug 2020 21:05:54 &#43;0530</pubDate>
