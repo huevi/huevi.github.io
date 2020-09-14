@@ -1,4 +1,4 @@
-baseURL = "http://heuvi.github.io/"
+baseURL = "https://huevi.github.io/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
