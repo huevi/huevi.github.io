@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: "Web Scraping without DB using Github Actions"
+title: "Schedule Web Scraping using Github Actions without DB"
 date: 2020-08-31T21:05:54+05:30
 lastmod: 2020-08-31T21:05:54+05:30
 draft: false
